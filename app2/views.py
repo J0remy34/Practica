@@ -3,27 +3,31 @@ from django.shortcuts import render
 
 def inicio(request):
 
-    lista_elementos = [
+    categorias = [
         {
             'id': 1,
-            'nombre': 'Elemento 1'
+            'nombre': 'Computadores',
+            'descripcion': 'Notebooks y computadores de escritorio.'
         },
         {
             'id': 2,
-            'nombre': 'Elemento 2'
+            'nombre': 'Periféricos',
+            'descripcion': 'Mouse, teclados y accesorios.'
         },
         {
             'id': 3,
-            'nombre': 'Elemento 3'
+            'nombre': 'Monitores',
+            'descripcion': 'Pantallas para trabajo y entretenimiento.'
         },
         {
             'id': 4,
-            'nombre': 'Elemento 4'
+            'nombre': 'Accesorios',
+            'descripcion': 'Productos complementarios para computadores.'
         }
     ]
 
     contexto = {
-        'lista_elementos': lista_elementos
+        'categorias': categorias
     }
 
     return render(request, 'app2/inicio.html', contexto)

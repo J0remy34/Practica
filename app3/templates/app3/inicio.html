@@ -1,13 +1,41 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    App 3
+    Proveedores
 {% endblock %}
 
 {% block content %}
 
-<h1>Bienvenido a App 3</h1>
+<h1>Proveedores</h1>
 
-<p>Esta es la tercera aplicación del proyecto.</p>
+<p>Listado de proveedores registrados en el sistema.</p>
+
+<table>
+
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Empresa</th>
+            <th>Contacto</th>
+            <th>Teléfono</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        {% for proveedor in proveedores %}
+
+        <tr>
+            <td>{{ proveedor.id }}</td>
+            <td>{{ proveedor.empresa }}</td>
+            <td>{{ proveedor.contacto }}</td>
+            <td>{{ proveedor.telefono }}</td>
+        </tr>
+
+        {% endfor %}
+
+    </tbody>
+
+</table>
 
 {% endblock %}

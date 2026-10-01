@@ -1,13 +1,39 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    App 1
+    Productos
 {% endblock %}
 
 {% block content %}
 
-<h1>Bienvenido a App 1</h1>
+<h1>Catálogo de Productos</h1>
 
-<p>Esta es la página principal de la primera aplicación.</p>
+<p>En esta sección puedes consultar los productos disponibles.</p>
+
+<div class="tabla-container">
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Producto</th>
+                <th>Precio</th>
+                <th>Stock</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for producto in productos %}
+            <tr>
+                <td>{{ producto.id }}</td>
+                <td>{{ producto.nombre }}</td>
+                <td>${{ producto.precio }}</td>
+                <td>{{ producto.stock }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</div>
 
 {% endblock %}

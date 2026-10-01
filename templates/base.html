@@ -6,33 +6,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>{% block title %}Mi Proyecto Django{% endblock %}</title>
+    <title>{% block title %}Mi Tienda{% endblock %}</title>
 
     <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
 </head>
 
 <body>
 
-    <header>
-        <nav>
-            <img src="{% static 'images/logo.png' %}" alt="Logo" class="logo">
+<header>
+    <nav class="navbar">
 
-            <ul>
-                <li><a href="{% url 'inicio' %}">Inicio</a></li>
-                <li><a href="{% url 'app1_inicio' %}">App 1</a></li>
-                <li><a href="{% url 'app2_inicio' %}">App 2</a></li>
-            </ul>
-        </nav>
-    </header>
+        <div class="logo-container">
+            <img src="{% static 'images/logo.png' %}"
+                 alt="Logo de la tienda"
+                 class="logo">
+            <span>Mi Tienda</span>
+        </div>
 
-    <main>
-        {% block content %}
-        {% endblock %}
-    </main>
+        <ul class="menu">
+            <li><a href="{% url 'inicio' %}">Inicio</a></li>
+            <li><a href="{% url 'app1_inicio' %}">Productos</a></li>
+            <li><a href="{% url 'app2_inicio' %}">Categorías</a></li>
+            <li><a href="{% url 'app3_inicio' %}">Proveedores</a></li>
+        </ul>
 
-    <footer>
-        <p>Mi Proyecto Django - Laboratorio Backend</p>
-    </footer>
+    </nav>
+</header>
+
+<main class="contenido">
+
+    {% block content %}
+    {% endblock %}
+
+</main>
+
+<footer>
+    <p>Mi Tienda © 2026 | Proyecto Django</p>
+</footer>
 
 </body>
 </html>

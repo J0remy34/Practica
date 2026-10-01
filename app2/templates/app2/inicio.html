@@ -1,19 +1,35 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    App 2
+    Categorías
 {% endblock %}
 
 {% block content %}
 
-<h1>Elementos de App 2</h1>
+<h1>Categorías de Productos</h1>
 
-<ul>
-    {% for item in lista_elementos %}
-        <li>
-            ID: {{ item.id }} - {{ item.nombre }}
-        </li>
+<p>Consulta las diferentes categorías disponibles en nuestra tienda.</p>
+
+<div class="tarjetas">
+
+    {% for categoria in categorias %}
+
+    <div class="tarjeta">
+
+        <h2>{{ categoria.nombre }}</h2>
+
+        <p>
+            <strong>ID:</strong> {{ categoria.id }}
+        </p>
+
+        <p>
+            {{ categoria.descripcion }}
+        </p>
+
+    </div>
+
     {% endfor %}
-</ul>
+
+</div>
 
 {% endblock %}

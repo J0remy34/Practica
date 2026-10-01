@@ -20,7 +20,7 @@ from django.shortcuts import render
 
 
 def inicio(request):
-    return render(request, 'base.html')
+    return render(request, 'inicio.html')
 
 
 urlpatterns = [

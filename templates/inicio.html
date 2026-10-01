@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Inicio | Mi Tienda
+{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+
+    <div class="hero-text">
+
+        <h1>Bienvenido a Mi Tienda</h1>
+
+        <p class="descripcion">
+            Este sitio permite gestionar y consultar información
+            relacionada con los productos de nuestra tienda.
+        </p>
+
+        <p class="descripcion">
+            Puedes revisar nuestro catálogo de productos, conocer
+            las categorías disponibles y consultar los proveedores
+            registrados en el sistema.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="secciones">
+
+    <h2>¿Qué puedes hacer?</h2>
+
+    <div class="tarjetas">
+
+        <div class="tarjeta">
+            <h2>🛒 Productos</h2>
+
+            <p>
+                Consulta los productos disponibles,
+                sus precios y el stock actual.
+            </p>
+
+            <a href="{% url 'app1_inicio' %}" class="boton">
+                Ver productos
+            </a>
+        </div>
+
+
+        <div class="tarjeta">
+            <h2>📦 Categorías</h2>
+
+            <p>
+                Revisa las diferentes categorías
+                en las que se organizan nuestros productos.
+            </p>
+
+            <a href="{% url 'app2_inicio' %}" class="boton">
+                Ver categorías
+            </a>
+        </div>
+
+
+        <div class="tarjeta">
+            <h2>🏢 Proveedores</h2>
+
+            <p>
+                Consulta los proveedores registrados
+                y sus datos de contacto.
+            </p>
+
+            <a href="{% url 'app3_inicio' %}" class="boton">
+                Ver proveedores
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
