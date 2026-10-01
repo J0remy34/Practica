@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    App 2
+{% endblock %}
+
+{% block content %}
+
+<h1>Elementos de App 2</h1>
+
+<ul>
+    {% for item in lista_elementos %}
+        <li>
+            ID: {{ item.id }} - {{ item.nombre }}
+        </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

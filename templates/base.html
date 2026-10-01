@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}Mi Proyecto Django{% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <img src="{% static 'images/logo.png' %}" alt="Logo" class="logo">
+
+            <ul>
+                <li><a href="{% url 'inicio' %}">Inicio</a></li>
+                <li><a href="{% url 'app1_inicio' %}">App 1</a></li>
+                <li><a href="{% url 'app2_inicio' %}">App 2</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>Mi Proyecto Django - Laboratorio Backend</p>
+    </footer>
+
+</body>
+</html>
